@@ -12,9 +12,9 @@ using namespace std;
 
 int main() {
     
-    fraction f1 (1,2);
-    fraction f2 (1,3);
-    fraction f3 (5,3);
+    fraction f1 (1, 2);
+    fraction f2 (1, 3);
+    fraction f3 (5, 3);
     fraction fres2;
     fraction fres;
     /* Print fraction 1 */
@@ -36,7 +36,7 @@ int main() {
     cout << "fres: Init state:"; 
     fres.printFract();
     cout << endl;
-    /* Add two fractals */
+    /* Add two fractions */
     fres = f3+f2;
     cout << "fres = f2 + f3: ";
     fres.printFract();
@@ -59,5 +59,12 @@ int main() {
 
     fres_str.printFract();
     std::cout << std::endl;
+    
+    /* fraction multiplication to int */
+    fres_str = f2_str * 2;
+    cout << "1/2 * 2 = ";
+    fres_str.printFract();
+    std::cout << std::endl;
+
     return 0;
 }

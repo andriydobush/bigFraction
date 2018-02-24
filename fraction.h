@@ -52,6 +52,8 @@ public:
 
     fraction operator*(const fraction &f) const;
 
+    fraction operator*(const int &f) const;
+
     fraction operator/(const fraction &f) const;
 
     bool operator>(const fraction &f) const;

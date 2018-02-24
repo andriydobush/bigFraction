@@ -406,6 +406,12 @@ fraction fraction::operator*(const fraction &f) const
     return fraction(n_mpz, d_mpz);
 }
 
+fraction fraction::operator*(const int &i) const
+{
+    fraction f (i, 1);
+    return *this * f;
+}
+
 fraction fraction::operator/(const fraction &f) const
 {
     return *this * f.InverseCopy();
