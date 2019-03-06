@@ -191,14 +191,6 @@ fraction::fraction() : num_int_(0), den_int_(1), use_mpz_(false)
 {
 }
 
-void fraction::printFract() const
-{
-    if (use_mpz_)
-        std::cout << num_mpz_ << "/" << den_mpz_;
-    else
-        std::cout << num_int_ << "/" << den_int_;
-}
-
 fraction fraction::operator+(const fraction &f) const
 {
     mpz_class n_mpz;
@@ -514,4 +506,17 @@ fraction &fraction::operator*=(const fraction &f)
 {
     *this = *this * f;
     return *this;
+}
+
+std::ostream& operator<<(std::ostream  &os, const fraction &f)
+{
+    if(!f.use_mpz())
+    {
+        os << f.num_int_ << '/' << f.den_int_;
+    }
+    else
+    {
+        os << f.num_mpz_ << '/' << f.den_mpz_;
+    }
+    return os;
 }

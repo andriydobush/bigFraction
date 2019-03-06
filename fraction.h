@@ -101,10 +101,6 @@ public:
      */
     void set_num_den(const mpz_class &num, const mpz_class &den);
 
-    /** @brief Command line print fraction in format: numerator/denominator
-     */
-    void printFract() const;
-
     /** @brief Assignment operator
      * @param[in] assignment operand
      * return result fraction
@@ -188,6 +184,12 @@ public:
      * return true if fraction equal to operand
      */
     bool operator!=(const fraction &f) const;
+
+    /** @brief Operator: output stream
+     * @param[in] stream
+     * @param[in] operand
+     */
+    friend std::ostream& operator<<(std::ostream& os, const fraction &f);
 
     /** @brief base method for comparing operators 
      */
